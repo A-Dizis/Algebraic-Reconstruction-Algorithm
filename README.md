@@ -9,34 +9,38 @@ To provide data (a sinogram) to the algorithm, and octave file output format was
 
 Description of functions:
 
- get info: Gets info about sinogram(available angles(angles), last angle position in degrees(thetamax), available projections(projections) and N the pixel width of the reconstructed image NxN).
+- get_info: Gets info about sinogram(available angles(angles), last angle position in degrees(thetamax), available projections(projections) and N the pixel width of the reconstructed image NxN).
 
- get sinogram: Reads sinogram.dat file and loads it in memory.
+- get_sinogram: Reads sinogram.dat file and loads it in memory.
 
- show sinogram: Helper function, will print the projection matrix for error checking.
+- show_sinogram: Helper function, will print the projection matrix for error checking.
 
- get density: Asks user for the density of lattice's points. The greater, the better the quality gets and slower the algorithm is being executed.
+- get_density: Asks user for the density of lattice's points. The greater, the better the quality gets and slower the algorithm is being executed.
 
- create points position: Creates a struct that holds the point's x,y positions.
+- create_points_position: Creates a struct that holds the point's x,y positions.
 
- write points: Helper function, will print position of points created.
+- write_points: Helper function, will print position of points created.
 
- get thread number: Asks the user the number of the threads that will be created. By rule, you should use as many as your CPU has available.
+- get_thread_number: Asks the user the number of the threads that will be created. By rule, you should use as many as your CPU has available.
 
- initialize image: Sets the pixels of the created image to 0.
+- initialize_image: Sets the pixels of the created image to 0.
 
- make projection: Creates the projection matrices for the current angle of the calculation.
+- make_projection: Creates the projection matrices for the current angle of the calculation.
 
- normalize projection: Normalizes the areas of the projections matrices to 1.
+- normalize_projection: Normalizes the areas of the projections matrices to 1.
 
- print projection matrices: Helper function, will print all projection matrices for the angle to a file.
+- print_projection_matrices: Helper function, will print all projection matrices for the angle to a file.
 
- contribution: Calculates the new corrections and refreshes the reconstructed image.
+- contribution: Calculates the new corrections and refreshes the reconstructed image.
 
- ask for repetition: Asks for the continuation o f calculations by pass throught the sinogram data once more. By this time the algorithm will have already made a full pass through the sinogram data.
+- ask_for_repetition: Asks for the continuation o f calculations by pass throught the sinogram data once more. By this time the algorithm will have already made a full pass through the sinogram data.
 
- normalize image: If the calculations are concluded, this function will normalize the final image.
+- normalize_image: If the calculations are concluded, this function will normalize the final image.
 
- output image: Will output the final image to a file.
+- output_image: Will output the final image to a file.
 
-Example: You can try reconstruct the example sinogram sinogram.dat into an image. The paramenters here are the there are 360 angles available, and 224 projections. Keep the file in the same directory with the executable for it to load. If you executed the reconstruction correct a final image file should appear under the name output_image.dat. This file contains all the appropriate data in order to be transformed back again into a bmp or png image using octave or appropriate software.
+EXAMPLE: You can try reconstruct the example sinogram sinogram.dat into an image. The paramenters here are the there are 360 angles available, and 224 projections. Keep the file in the same directory with the executable for it to load. If you executed the reconstruction correct a final image file should appear under the name output_image.dat. This file contains all the appropriate data in order to be transformed back again into a bmp or png image using octave or appropriate software.
+
+IDEAS FOR EXTRA FEATURES: 
+- It would be a nice feature to add a live previewer of the created image using OpenGL.
+- Autorepetition or autocancelation can be made using a measure of change between consecutive steps of correction.
