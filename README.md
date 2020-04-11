@@ -3,9 +3,9 @@ This is an application of ART algorithm in 2-D using multithreading and a new ap
 
 For the user to get a grasp of the internal workings of this algorithm, it is highly recommended to, initially skip through the paper "A tutorial on ART (Algebraic Reconstruction Technique)" by R. Gordon.
 
-In this paper the projection matrices are not calculated with accuracy, as they are given bit values 0 or 1 in each position. Here we calculate the values with great accuracy, using lattice points for the estimation of the real area of each position as it can be seen in the images. 
+In this paper the projection matrices are not calculated with accuracy, as they are given bit values 0 or 1 in each position. Here we calculate the values with great accuracy, using lattice points for the estimation of the real area of each position as it can be seen in the image. 
 
-To provide data (a sinogram) to the algorithm, and octave file output format was used. This is nothing more than values set in x - y axis format. Values should be normalized to one, as they represent the intensity of the beam received  after passing though the object that is being reconstucted. The format can be seen in the file.
+To provide data (a sinogram) to the algorithm, and octave file output format was used. This is nothing more than values set in x - y axis format. Values should be normalized to one, as they represent the intensity of the beam received  after passing though the object that is being reconstucted. The format can be seen in the example file sinogram.dat.
 
 Description of functions:
 
@@ -38,3 +38,5 @@ Description of functions:
  normalize image: If the calculations are concluded, this function will normalize the final image.
 
  output image: Will output the final image to a file.
+
+Example: You can try reconstruct the example sinogram sinogram.dat into an image. The paramenters here are the there are 360 angles available, and 224 projections. Keep the file in the same directory with the executable for it to load. If you executed the reconstruction correct a final image file should appear under the name output_image.dat. This file contains all the appropriate data in order to be transformed back again into a bmp or png image using octave or appropriate software.
