@@ -42,5 +42,4 @@ Description of functions:
 EXAMPLE: You can try reconstruct the example sinogram sinogram.dat into an image. The paramenters here are the there are 360 angles available, and 224 projections. Keep the file in the same directory with the executable for it to load. If you executed the reconstruction correct a final image file should appear under the name output_image.dat. This file contains all the appropriate data in order to be transformed back again into a bmp or png image using octave or appropriate software.
 
 IDEAS FOR EXTRA FEATURES: 
-- It would be a nice feature to add a live previewer of the created image using OpenGL.
 - Autorepetition or autocancelation can be made using a measure of change between consecutive steps of correction.
